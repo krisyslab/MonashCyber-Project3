@@ -47,43 +47,67 @@ The following vulnerabilities were identified:
       
       No filtering of IP addresses where the SSH connection is coming from. Therefore anyone can SSH to the VM from any IP address.
 
-
-![michael.png](https://github.com/krisyslab/ThirdProject/blob/1a1ceff35d03fc7adfde5f8a2b9c83830a69e864/images/michael.PNG)      
-
   - Vulnerable to WordPress User Enumeration
 
-![wpscan.png](https://github.com/krisyslab/ThirdProject/blob/0a8440f1018e4a39d9c0b69f61ee2b9b1ba97567/images/wpscan.PNG)
-
-![wpscan2.png](https://github.com/krisyslab/ThirdProject/blob/0a8440f1018e4a39d9c0b69f61ee2b9b1ba97567/images/wpscan2.PNG)
 
   - No file security permission implemented
-
+      Sensitive files should have a proper read, write and execute permissions to maintain their confidentiality. With this exercise we were able to explore and open folders and files from with using a regular user account. 
 
   - Executable Python root escalation privilege   
-
+      Using a python command we were able to elevate a regular user privilege to a root user. This is very dangerous for any system as anyone who can get into the system can own it and have the freedom to do whatever they wish.
 
 ### Exploitation
  
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `flag1.txt`: 
+  - `flag1.txt`: b9bbcb33e11b80be759c4e844862482d
+
+    - **Exploit Used**
+      - Using OSINT we have identified that the Target website is using WordPress. 
+        When we right clicked on the website to go "Inspect Element" search for "wordpress" we found two in the html as shown in the image below. 
+
+![wordpress.png](https://github.com/krisyslab/ThirdProject/blob/64820315047f7039a054604e52f37ee6f31d2e16/images/wordpress.PNG)
+
+      - Then we used 'wpscan' to enumerate the pages and users of the Target1 VM
+
+      $ wpscan --url http://192.168.1.110/wordpress -eu
+
+![wpscan.png](https://github.com/krisyslab/ThirdProject/blob/0a8440f1018e4a39d9c0b69f61ee2b9b1ba97567/images/wpscan.PNG)
+
+![wpscan2.png](https://github.com/krisyslab/ThirdProject/blob/0a8440f1018e4a39d9c0b69f61ee2b9b1ba97567/images/wpscan2.PNG)
+
+      - We focused on knowning the usernames when we executed the 'wpscan' and first targeted the user 'michael'. 
+      We proceeded to SSH into the Target VM using username 'michael' and tried to guess the password.
+      
+![michael.png](https://github.com/krisyslab/ThirdProject/blob/1a1ceff35d03fc7adfde5f8a2b9c83830a69e864/images/michael.PNG)
+
+      - Exploring the system and traversing to '/var/www' we used grep to search for flags.
+
+      $ grep -RE flag html
 
 ![flag1.png](https://github.com/krisyslab/ThirdProject/blob/b5084ee3fa1d9fd63045ac162e5b6d52f48efad8/images/flag1.PNG)
 
-    - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
-
-  - `flag2.txt`:
+  - `flag2.txt`: b9bbcb33e11b80be759c4e844862482d
       
-![flag2hash.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag2hash.PNG)  
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
 
-  - `flag3.txt` and `flag4.txt` :
+      - Doing an 'ls' in the '/var/www/' folder showed the flag2.txt.
+
+    ```
+      $ cd /var/www
+      $ ls
+      $ cat flag2.txt
+    ```
+ ![flag2hash.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag2hash.PNG)   
       
+
+  - `flag3.txt`: afc01ab56b50591e7dccf93122770cd2
+    `flag4.txt`: 715dea6c055b9fe3337544932f2941ce
+      
+
+    $ cat /var/www/html/wordpress/wp-config.php
+
 ![flag3,4.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag3and4.PNG)
 
 ![flag4.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag4theend.PNG)
