@@ -13,8 +13,8 @@ You must inspect your traffic capture to answer the following questions:
 
  ![dhcpserver.png](https://github.com/krisyslab/ThirdProject/blob/ec18d2239cb46087c567a255f6c92e191f2ff875/images/dhcpserver.png) 
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
-    - june.dll
-
+- june11.dll
+    
  ![june11.png](https://github.com/krisyslab/ThirdProject/blob/ec18d2239cb46087c567a255f6c92e191f2ff875/images/june11.png) 
 
 4. Upload the file to VirusTotal.com
