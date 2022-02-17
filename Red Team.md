@@ -115,7 +115,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
 ![flag3,4.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag3and4.PNG)
 
-![flag4.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag4theend.PNG)
+
 
 - **Exploit Used**
 
@@ -128,18 +128,17 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
 ![john.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/johnfin.PNG)
 
+![steven.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/steven.PNG)
+
   - We then SSH to the system using steven's password cracked in john the ripper.
 
 
 
   - After getting access into SSH we then escalated out privilege to root.
-  
-          ```
-            $ sudo python -c 'import pty;pty.spawn("/bin/bash");'
-          ``` 
+
 ![sudoescalated.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/sudoescalated.PNG)
 
-![steven.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/steven.PNG)
+![flag4.png](https://github.com/krisyslab/ThirdProject/blob/fd6a47e873f21d4f535d415f2c90ae1e43ec76ee/images/flag4theend.PNG)
 
 Prepared by Kris Martinez
 
