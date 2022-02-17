@@ -37,10 +37,9 @@ You must inspect your traffic capture to answer the following questions:
 
 ![matthijs.png](https://github.com/krisyslab/ThirdProject/blob/6dc62c5174ac1a6cef50eaf90a60158055dc5730/images/mattijs.PNG)
 3. What are the IP addresses used in the actual infection traffic?
-    - 185.243.115.84
+- 185.243.115.84
 
 ![infectiontraffic.png](https://github.com/krisyslab/ThirdProject/blob/6dc62c5174ac1a6cef50eaf90a60158055dc5730/images/infectiontraffic.PNG)
-
 
 I could not complete the last part below because when i tried to log-in again to my Kali, the below error occured and Kali won't run after retrying many times.
 
