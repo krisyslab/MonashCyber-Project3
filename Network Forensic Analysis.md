@@ -44,6 +44,7 @@ You must inspect your traffic capture to answer the following questions:
 I could not complete the last part below because when i tried to log-in again to my Kali, the below error occured and Kali won't run after retrying many times.
 
 ![restore.png](https://github.com/krisyslab/ThirdProject/blob/daecf8ae1704616dfade1f59c023fe2067e21a68/images/restore%20error.PNG)
+
 4. As a bonus, retrieve the desktop background of the Windows host.
 
 ---
