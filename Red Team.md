@@ -68,13 +68,13 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 - Target 1
   - `flag1.txt`: b9bbcb33e11b80be759c4e844862482d
 
-    - **Exploit Used**
+- **Exploit Used**
       - Using OSINT we have identified that the Target website is using WordPress. 
         When we right clicked on the website to go "Inspect Element" and search for "wordpress" we found two in the html as shown in the image below. 
 
 ![wordpress.png](https://github.com/krisyslab/ThirdProject/blob/64820315047f7039a054604e52f37ee6f31d2e16/images/wordpress.PNG)
 
-      - Then we used 'wpscan' to enumerate the pages and users of the Target1 VM
+  - Then we used 'wpscan' to enumerate the pages and users of the Target1 VM
 
       $ wpscan --url http://192.168.1.110/wordpress -eu
 
@@ -82,12 +82,12 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
 ![wpscan2.png](https://github.com/krisyslab/ThirdProject/blob/0a8440f1018e4a39d9c0b69f61ee2b9b1ba97567/images/wpscan2.PNG)
 
-      - We focused on knowning the usernames when we executed the 'wpscan' and first targeted the user 'michael'. 
+  - We focused on knowning the usernames when we executed the 'wpscan' and first targeted the user 'michael'. 
         We proceeded to SSH into the Target VM using username 'michael' and tried to guess the password.
       
 ![michael.png](https://github.com/krisyslab/ThirdProject/blob/1a1ceff35d03fc7adfde5f8a2b9c83830a69e864/images/michael.PNG)
 
-      - Exploring the system and traversing to '/var/www' we used grep to search for flags.
+  - Exploring the system and traversing to '/var/www' we used grep to search for flags.
 
       $ grep -RE flag html
 
@@ -95,7 +95,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag2.txt`: b9bbcb33e11b80be759c4e844862482d
       
-    - **Exploit Used**
+- **Exploit Used**
 
       - Doing an 'ls' in the '/var/www/' folder showed the flag2.txt.
 
