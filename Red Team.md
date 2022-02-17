@@ -130,13 +130,16 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - We then SSH to the system using steven's password cracked in john the ripper.
 
-![steven.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/steven.PNG)
+
 
   - After getting access into SSH we then escalated out privilege to root.
+  
           ```
             $ sudo python -c 'import pty;pty.spawn("/bin/bash");'
           ``` 
 ![sudoescalated.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/sudoescalated.PNG)
+
+![steven.png](https://github.com/krisyslab/ThirdProject/blob/c7b8ed403f6e2e27dacb8ec37cde81660db078bb/images/steven.PNG)
 
 Prepared by Kris Martinez
 
