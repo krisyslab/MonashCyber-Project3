@@ -111,7 +111,10 @@ The logs and alerts generated during the assessment suggest that this network is
               - Change SSH port to a non-standard port 
   - **Why It Works**:
 
-              - SSH by default is set to listen on port 22. Running SSH on a non-standard port offers additional security by obscurity. 
+              - SSH by default is set to listen on port 22. 
+              
+              Running SSH on a non-standard port offers additional security by obscurity. 
+
               Disclaimer: Although it will hide the SSH server from the casual prober, but it will not hide the server from someone who is targeting the business specifically.
     - **Patch**:
 
@@ -131,7 +134,9 @@ The logs and alerts generated during the assessment suggest that this network is
               - Use Stop User Enumeration Plugin
   - **Why It Works**:
 
-              - Tools like `WPSCAN` are designed for use by ethical hackers to find users login names. `Stop User Enumeration` is a security plugin designed to detect and prevent malicious individuals from scanning the website for login usernames.
+              - Tools like `WPSCAN` are designed for use by ethical hackers to find users login names. 
+              
+              `Stop User Enumeration` is a security plugin designed to detect and prevent malicious individuals from scanning the website for login usernames.
 
             INSTALLATION:
               Either using the dashboard ‘Add Plugin’ feature to find, install and activate the plugin, or
@@ -143,7 +148,7 @@ The logs and alerts generated during the assessment suggest that this network is
 
   - **Patch**: 
   
-            - Secure wp-config.php through:
+            Secure wp-config.php through:
               - Protection through .htaccess file
               - Moving wp-config.php file
               - Modify wp-config.php File
@@ -168,11 +173,19 @@ The logs and alerts generated during the assessment suggest that this network is
 
                             </files>
                         ```         
+
               - Moving wp-config.php file
-                  * Usually, the wp-config.php file is located in the root directory. The best practice is to move it to an unpredictable location in order to secure the sensitive data stored inside the file.
+                  Usually, the wp-config.php file is located in the root directory. 
+                  
+                  The best practice is to move it to an unpredictable location in order to secure the sensitive data stored inside the file.
+
 
               - Modify wp-config.php File
-                  * During this exercise we found the wp-config.php in the /var/www/html. This is a directory that is a public_html file which can ne reached by the WordPress website visitors. Create a new configuration file that is stored in a different location such that when wp-config.php is opened, the sensitive data is included from a separate file: 
+                  During this exercise we found the wp-config.php in the /var/www/html. 
+                  
+                  This is a directory that is a public_html file which can ne reached by the WordPress website visitors. 
+                  
+                  Create a new configuration file that is stored in a different location such that when wp-config.php is opened, the sensitive data is included from a separate file: 
                       
                       INSTRUCTIONS:
                       Open the current wp-config.php file and move the lines which contain the database connection details, database prefix and also WordPress security keys. Append <?php at the starting of the new configuration file and ?> at the end of the file.
