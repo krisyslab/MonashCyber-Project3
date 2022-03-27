@@ -41,23 +41,16 @@ You must inspect your traffic capture to answer the following questions:
 
 ![infectiontraffic.png](https://github.com/krisyslab/ThirdProject/blob/6dc62c5174ac1a6cef50eaf90a60158055dc5730/images/infectiontraffic.PNG)
 
-I could not complete the last part below because when i tried to log-in again to my Kali, the below error occured and Kali won't run after retrying many times.
-
-![restore.png](https://github.com/krisyslab/ThirdProject/blob/daecf8ae1704616dfade1f59c023fe2067e21a68/images/restore%20error.PNG)
-
-4. As a bonus, retrieve the desktop background of the Windows host.
-
----
 
 ## Illegal Downloads
 
 1. Find the following information about the machine with IP address `10.0.0.201`:
-    - MAC address:
-    - Windows username:
-    - OS version: 
+    - MAC address: 00:16:17:18:66:c8
+    - Windows username: elmer.blanco
+    - OS version: Windows NT 10.0; win64; x64
 
 2. Which torrent file did the user download?
-
+    - Betty_Boop_Rhythm_on_the_Reservation.avi.torrent 
 
 Prepared by Kris Martinez
 
